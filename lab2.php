@@ -1,10 +1,8 @@
+<!DOCTYPE html>
 <?php
-    include("")//poss config file??
-    session_start();
-
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    }
+    $db = mysqli_connect("localhost", "root", "", "users_lab2");
+    $sql = "SELECT userId, username, password from users";
+    $usersResult = mysqli_query($db, $sql);
 ?>
 <html>
     <head>
@@ -12,19 +10,20 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="lab2.css">
     </head>
-    <body>
-        <div class="form-container">
-            <form action="" method="POST">
-                <!--Username Field-->
-                <label for="user">Username:</label>
-                <input type="text" id="user" placeholder="josham">
-                <span id="nameMsg"></span>
-                <!--Password Field-->
-                <label for="pass">Password:</label>
-                <input type="password" id="pass">
-                <span id="passMsg"></span>
-                <button class="btn">Log in<button>
-            </form>
-        </div>
+    <body class="login-bg">
+            <div class="form-container">
+                <form action="" method="POST">
+                    <h1>Welcome!</h1>
+                    <!--Username Field-->
+                    <label name="user">Username:</label>
+                    <input type="text" id="user" placeholder="josham">
+                    <span id="nameMsg"></span>
+                    <!--Password Field-->
+                    <label name="pass">Password:</label>
+                    <input type="password" id="pass">
+                    <span id="passMsg"></span>
+                    <input id="submitBtn" class="btn" type="button" value="Log In">
+                </form>
+            </div>
     </body>
 </html>
