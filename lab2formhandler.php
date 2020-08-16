@@ -45,7 +45,7 @@
                         $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
                         mysqli_stmt_bind_param($stmt, "ss", $username, $hashedPassword);//or use $pass for non hash
                         mysqli_stmt_execute($stmt);
-                        header("Location: lab2.php?siginup=success");
+                        header("Location: registrationsuccess.php?signup=success");
                         exit();
                     }
                 }
@@ -71,7 +71,7 @@
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
                 if($row = mysqli_fetch_assoc($result)){
-                    $passwordVerify = password_verfy($pass, $row['password']);
+                    $passwordVerify = password_verify($pass, $row['password']);
                     if($passwordVerify == false) {
                         header("Location: lab2.php?error=passwordinvalid&username=".$user);
                     }
