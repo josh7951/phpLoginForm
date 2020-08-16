@@ -3,6 +3,7 @@
     <head>
         <title>Welcome Admin!</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="lab2.css">
     </head>
     <body>
         <h1>Welcome Overlord!</h1>
@@ -27,7 +28,7 @@
             $usersResult = mysqli_query($dbhandle, $sql);
 
             while ($row = mysqli_fetch_row($usersResult)) {
-                print "<tr><td>";
+                print '<tr><td style="text-align: center;">';
                 print $row[0];
                 print "</td><td>";
                 print $row[1];

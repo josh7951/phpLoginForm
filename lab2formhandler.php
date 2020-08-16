@@ -79,9 +79,14 @@
                         session_start();
                         $_SESSION['uID'] = $row['userId'];
                         $_SESSION['user'] = $row['username'];
-
-                        header("Location: adminpage.php?login=success");
-                        exit();
+                        if($_SESSION['user'] == 'admin') {
+                            header("Location: adminpage.php?login=success");
+                            exit();  
+                        }
+                        else {
+                            header("Location: userpage.php?login=success");
+                            exit();
+                        }
                     }
                     else{
                         header("Location: lab2.php");

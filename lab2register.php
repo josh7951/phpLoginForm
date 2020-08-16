@@ -25,7 +25,7 @@
                     <button type="submit" id="submitBtn" class="btn" name="register">Register</button>
                     <br>
                     <hr>
-                    <p>Already Registered?<a href="lab2.php"> sign in here</a></p>
+                    <p>Already Registered? <a href="lab2.php">sign in here</a></p>
                 </form>
             </div>
     </body>
