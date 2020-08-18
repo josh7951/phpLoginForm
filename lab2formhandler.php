@@ -73,7 +73,7 @@
                 if($row = mysqli_fetch_assoc($result)){
                     $passwordVerify = password_verify($pass, $row['password']);
                     if($passwordVerify == false) {
-                        header("Location: lab2.php?error=passwordinvalid&username=".$user);
+                        header("Location: lab2.php?error=passwordinvalid&username=".$username);
                     }
                     else if($passwordVerify == true){
                         session_start();
@@ -84,7 +84,7 @@
                             exit();  
                         }
                         else {
-                            header("Location: userpage.php?login=success");
+                            header("Location: userpage.php?login=success&username=".$username);
                             exit();
                         }
                     }

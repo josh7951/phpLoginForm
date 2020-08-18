@@ -12,16 +12,28 @@
             <div class="form-container">
                 <form action="lab2formhandler.php" method="post">
                     <h1>Welcome!</h1>
+                    <!--Error Messages-->
+                    <?php
+                        if(isset($_GET['error'])){
+                            if($_GET['error'] == "emptyfields") {
+                                echo '<p class="error-msg">Please fill out all fields!</p>';
+                                }
+                            else if ($_GET['error'] == "passwordcheck") {
+                                echo '<p class="error-msg">Passwords do not match!</p>';
+                            }
+                            else if ($_GET['error'] == "userexists") {
+                                echo '<p class="error-msg">Username already taken!</p>';
+                            }
+                        }
+                    ?>
                     <!--Username Field-->
                     <label>Username:</label>
-                    <input type="text" id="user" placeholder="josham" name="user"> 
-                    <span id="nameMsg"></span>
+                    <input type="text" placeholder="josham" name="user"> 
                     <!--Password Field-->
                     <label>Password:</label>
-                    <input type="password" id="pass" name="pass">
+                    <input type="password" name="pass">
                     <label>Confirm Password:</label>
-                    <input type="password" id="pass" name="pass-confirm">
-                    <span id="passMsg"></span>
+                    <input type="password" name="pass-confirm">
                     <button type="submit" id="submitBtn" class="btn" name="register">Register</button>
                     <br>
                     <hr>

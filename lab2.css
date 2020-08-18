@@ -4,6 +4,7 @@ body {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    background-color: #fcfcfc;
 }
 a {
     color: #2dadd8;
@@ -65,6 +66,23 @@ tr:nth-child(even) {
     background-color: #2dadd8;
     color:white;
 }
+.logout-btn {
+    display: block;
+    height: 8%;
+    margin-top: 5px;
+    background-color: white;
+    color: black;
+    border: 2px solid #F9423B;
+    border-radius: 5px;
+    margin: 4px 0px;
+    transition-duration: 0.4s;
+    float: right;
+    cursor: pointer;
+}
+.logout-btn:hover {
+    background-color: #F9423B;
+    color:white;
+}
 .form-container {
     background-color: #ffffff;
     border: 2px solid #bfbdbd;
@@ -78,5 +96,24 @@ tr:nth-child(even) {
     justify-content: center;
 }
 .form-description {
-    margin: 5px;
+    margin: 20px;
+}
+.error-msg {
+    color: red;
+}
+.user-container {
+    width: 80%;
+    margin: auto;
+}
+
+#colorSwatch {
+    width: 50px;
+    height: 50px;
+}
+
+.color-btn {
+    width: 100px;
+    height: 50px;
+    margin-top: 5px;
+    transform: translate(12px, -9.75px);
 }
